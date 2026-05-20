@@ -1,0 +1,11 @@
+{
+  "name": "second-brain",
+  "version": "1.0.0",
+  "description": "Phase 2 Second Brain Project",
+  "main": "src/api/server.ts",
+  "scripts": {
+    "generate": "npx orval@7.1.0 --input openapi/notes.yaml --output src/api/client.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
