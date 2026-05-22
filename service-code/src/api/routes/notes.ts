@@ -70,4 +70,14 @@ router.delete('/:id', async (req, res) => {
   });
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const data = await db.select().from(notes);
+    res.json(data);
+  } catch (err) {
+    console.error('GET /notes error:', err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 export default router;
