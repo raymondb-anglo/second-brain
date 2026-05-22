@@ -5,7 +5,7 @@
 # -------------------------------------------------
 # 2️⃣ Then re‑include the folders/files we actually want
 # -------------------------------------------------
-!src/
+!src/**
 !openapi/
 !package.json
 !pnpm-lock.yaml
