@@ -1,0 +1,36 @@
+# -------------------------------------------------
+#  Enforce line‑ending handling for the whole repo
+# -------------------------------------------------
+
+# All text files (Markdown, JSON, YAML, JavaScript, etc.)
+# → store as LF in the repository, checkout as LF on every platform
+* text=auto eol=lf
+
+# -----------------------------------------------------------------
+#  Explicit binary files – Git will never try to convert line endings
+# -----------------------------------------------------------------
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.svg   binary
+*.zip   binary
+*.tar   binary
+*.gz    binary
+*.pdf   binary
+*.mp4   binary
+*.mp3   binary
+
+# -------------------------------------------------
+#  Files that *must* stay CRLF (Windows batch scripts, etc.)
+# -------------------------------------------------
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# -------------------------------------------------
+#  Keep the Obsidian vault folder untouched (optional)
+# -------------------------------------------------
+# If you prefer NOT to version‑control the whole .obsidian folder,
+# you can ignore it in .gitignore instead.  The line below just
+# makes sure Git treats any remaining files as binary (no conversion).
+.obsidian/*  binary

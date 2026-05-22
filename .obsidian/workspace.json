@@ -332,17 +332,17 @@
   },
   "active": "b8d292e05a886e33",
   "lastOpenFiles": [
-    "service-code/package.json",
-    "service-code/openapi/notes.yaml",
-    "service-code/openapi",
-    "service-code/src/api/routes/notes.ts",
-    "service-code/src/types/note.ts",
-    "service-code/src/services/openRouter.ts",
-    "service-code/src/services/noteService.ts",
-    "service-code/src/db/schema.ts",
-    "service-code/src/db/index.ts",
-    "service-code/src/api/routes",
-    "service-code/src/api/server.ts",
+    "service-code/drizzle/0001_odd_blindfold.sql",
+    "service-code/drizzle/meta/0001_snapshot.json",
+    "service-code/_tmp_53152_4581f1d56feabd10127b7bb441ba6854",
+    "service-code/_tmp_17620_c77a4b8f86b1dccf37a84c2400e9ae3f",
+    "service-code/_tmp_40204_49d55fea966ca00762abc3da79c9b521",
+    "service-code/_tmp_45808_143268e32faeaa3a8e3bfcc29f5a3e28",
+    "service-code/_tmp_54456_c9e761bef069ebac7f8f6dd6354860cc",
+    "service-code/drizzle/0000_past_pete_wisdom.sql",
+    "service-code/drizzle/meta/0000_snapshot.json",
+    "service-code/drizzle/meta/_journal.json",
+    "service-code/drizzle/meta",
     "Welcome.md"
   ]
 }
