@@ -3,7 +3,7 @@
   "out": "./drizzle",
   "dialect": "postgresql",
   "dbCredentials": {
-    "url": "postgresql://sb_user:oUEZdgLcYougY8dLouEgp6yQ5CuFd8QD@dpg-d87sutmq1p3s73flj4q0-a.singapore-postgres.render.com/secondbrain_xuq2"
+    "url": ""
   },
   "verbose": true
 }
