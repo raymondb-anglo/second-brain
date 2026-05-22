@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: Second Brain API
+  version: 1.0.0
+paths:
+  /api/notes:
+    post:
+      summary: Create a note
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoteInput'
+      responses:
+        '201':
+          description: Note created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+    get:
+      summary: List notes
+      parameters:
+        - in: query
+          name: tag
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: List of notes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Note'
+  /api/notes/{id}:
+    get:
+      summary: Get a note
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Note data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+components:
+  schemas:
+    NoteInput:
+      type: object
+      required: [title, tags, content]
+      properties:
+        title:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        content:
+          type: string
+    Note:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        path:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time

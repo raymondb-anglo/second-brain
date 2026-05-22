@@ -1,15 +1,15 @@
-# -------------------------------------------------
-# 1️⃣ Ignore everything by default
-# -------------------------------------------------
-*
-# -------------------------------------------------
-# 2️⃣ Then re‑include the folders/files we actually want
-# -------------------------------------------------
-!src/**
-!openapi/
-!package.json
-!pnpm-lock.yaml
-!tsconfig.json
-!README.md          # optional, if you have one
-!.gitignore
-!.env.example       # keep a template, never commit the real .env
+# Dependencies
+node_modules/
+
+# Environment secrets
+.env
+
+# Build output
+dist/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
