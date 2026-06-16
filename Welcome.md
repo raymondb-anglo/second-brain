@@ -12,6 +12,7 @@ A smart note-taking and knowledge management system that combines Obsidian with 
 
 ## 📁 Project Structure
 
+```text
 /Second-Brain/
 ├── src/ # Source code
 │ ├── api/ # API routes and server setup
@@ -39,3 +40,14 @@ A smart note-taking and knowledge management system that combines Obsidian with 
 ```bash
 git clone https://github.com/raymondb-anglo/second-brain.git
 cd second-brain
+
+2. Install dependencies:
+```bash
+npm install
+
+3. Configure environment variables:
+Create a .env file in the root directory based on the provided template and add your database credentials and OpenRouter API key.
+
+4. Run the application:
+```bash
+npm run dev
