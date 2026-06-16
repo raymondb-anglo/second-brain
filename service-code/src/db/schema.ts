@@ -35,7 +35,7 @@ export const noteSchema = z.object({
 
   tags: z.array(z.string()),
 
-  path: z.string(),
+  path: z.string().optional(),
 
   source: z.string().optional(),
 });

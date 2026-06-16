@@ -4,6 +4,7 @@ import { db } from '../db';
 import { notes, noteSchema } from '../db/schema';
 import { z } from 'zod';
 import { OpenRouterClient } from './openRouter';
+import { eq, sql } from 'drizzle-orm';
 
 const vaultPath = process.env.VAULT_PATH!;
 
@@ -30,6 +31,7 @@ export class NoteService {
         title,
         tags,
         path: fileName,
+        content,
       })
       .returning();
 
@@ -38,7 +40,7 @@ export class NoteService {
 
   /** Retrieve a note by ID */
   async getNote(id: number) {
-    const note = await db.select().from(notes).where(notes.id.eq(id)).limit(1);
+    const note = await db.select().from(notes).where(eq(notes.id, id)).limit(1);
     if (!note[0]) throw new Error('Note not found');
 
     const filePath = path.join(vaultPath, note[0].path);
@@ -49,7 +51,9 @@ export class NoteService {
   /** List notes with optional tag filter */
   async listNotes(tag?: string) {
     const query = db.select().from(notes);
-    if (tag) query.where(notes.tags.contains([tag]));
+    if (tag) {
+      query.where(sql`${notes.tags} @> ARRAY[${tag}]::text[]`);
+    }
     return query.execute();
   }
 }
